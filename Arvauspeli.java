@@ -5,20 +5,27 @@ public class Arvauspeli {
         
         Scanner in = new Scanner(System.in);
 
-        
+        int counter = 0;
         String nimi;
+        String arvoitus = "roope";
 
         do
         {
             
-            System.out.println("Arvaa nimeni");
-            nimi = in.nextLine();
+            System.out.println("Arvaa nimeni: (Kirjoita 'loppu')");
+            nimi = in.nextLine().toLowerCase();
+            if (!nimi.equals("loppu"))
+            {
+                counter++;
+            }
             
 
-        } while (!nimi.equals("Juuso")); 
-            System.out.println("Onneksi olkoon arvasit nimen!");
-                
-                
+        } while (!nimi.equals(arvoitus) && !nimi.equals("loppu")); 
+                if(nimi.equals(arvoitus))
+                {
+                    System.out.println("Onneksi olkoon arvasit nimen!");
+                }
+                System.out.println("Arvasit "+ counter +" kertaa.");
             
 
     }
